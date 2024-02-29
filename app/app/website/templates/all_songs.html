@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %}All songs{% endblock %} {% block content
+%}
+<!--table to present the songs in database-->
+    <div id="table-container">
+        <h1 align="center">All songs on our portal</h1>
+        <table align="center" border="2">
+            <thead>
+                <tr align="center">
+                    <th>&nbspID&nbsp</th>
+                    <th>&nbsp Title of the Song &nbsp</th>
+                    <th>&nbsp &nbsp Artist &nbsp &nbsp</th>
+                    <th>&nbsp Date &nbsp</th>
+                    <th>&nbsp User ID &nbsp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr align="center" class="styled-tr" onclick="redirectToPage('/song_details/{{ row[0] }}')">
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td>{{ row[5] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<style>
+    .styled-tr {
+      background-color: #ffffff;
+    }
+    .styled-tr:hover,
+    .styled-tr:focus {
+      background-color: #0d6efd;
+    }
+  </style>
+{% endblock %}

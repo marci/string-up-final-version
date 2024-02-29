@@ -1,0 +1,114 @@
+{% extends "base.html" %} {% block title %}Add a new song{% endblock %} {% block content%}
+
+<h1 align="center">Here you can add a song to expand the song library</h1>
+
+<!--enter spaces for title, artist, song lyrics-->
+<form method="POST">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      placeholder="Enter title"
+    />
+  </div>
+  <div class="form-group">
+    <label for="artist">Artist</label>
+    <input
+      type="text"
+      class="form-control"
+      id="artist"
+      name="artist"
+      placeholder="Enter artist"
+    />
+  </div>
+  <label for="song">Song lyrics</label>
+  <textarea 
+    name="song" 
+    id="song" 
+    class="form-control"
+    placeholder="... and the lyrics go here"></textarea>
+  <br />
+<!--button for submission-->
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Song</button>
+  </div>
+</form>
+<br/>
+<p>
+  If the song's chords are not your own work, please cite the source at the bottom of the song. 
+</p>
+ 
+<!--collapsible to provide an example for a song outlook and citing sources (if needed)-->
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+  background-color: #0d6efd;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+}
+
+.active, .collapsible:hover {
+  background-color: #1976d2;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+
+<body>
+<button type="button" class="collapsible">Click here to see an example ⇩ </button>
+<div class="content">
+  <p>
+    [Verse] <br/>
+    G &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp A <br/>
+    We're no strangers to love<br/>
+    G &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp A<br/>
+    You know the rules and so do I<br/>
+    G &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp A<br/>
+    A full commitment's what I'm thinking of<br/>
+    G &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp A<br/>
+    You wouldn't get this from any other guy<br/>
+    G &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp A<br/>
+    I just wanna tell you how I'm feeling<br/>
+    G &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspA<br/>
+    Gotta make you understand<br/>
+    (continues...)<br/><br/>
+    From: “Foo Fighters - Never Gonna Give You up (Chords).” Tabs.ultimate-Guitar.com, <a href="https://tabs.ultimate-guitar.com/tab/foo-fighters/never-gonna-give-you-up-chords-2266705"> tabs.ultimate-guitar.com/tab/foo-fighters/never-gonna-give-you-up-chords-2266705.</a>
+  </p>
+</div>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
+</body>
+
+
+{% endblock %}

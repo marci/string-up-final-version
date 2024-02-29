@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content%}
+<!--a greeting -->
+<h4 align="center" style="position: relative; top: 20px;">
+        <b> Welcome! </b> <br/>
+        Add new songs to expand the library ♪(^∇^ )
+</h4>
+      
+
+<br/><br/>
+
+<!--buttons to navigate user through the app-->
+<button style="display: block; margin: auto; position: relative; top: 20px;" 
+        class="btn btn-primary" 
+        onclick="redirectToPage('/add_song')" 
+        align="center">Add a new song</button>
+<br/><p>
+<button style="display: block; margin: auto; position: relative; top: 20px;"
+        class="btn btn-primary" 
+        onclick="redirectToPage('/all_songs')">All Songs</button>
+<br/><p>
+<button style="display: block; margin: auto; position: relative; top: 10px;"
+        class="btn btn-primary" 
+        onclick="redirectToPage('/my_library')">My Library</button>
+
+</p>
+
+{% endblock %}
